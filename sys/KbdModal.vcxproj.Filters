@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Driver Files">
+      <Extensions>inf;inv;inx;mof;mc;</Extensions>
+      <UniqueIdentifier>{A6674166-7336-4066-9782-8BC6F701B19A}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source">
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx;*</Extensions>
+      <UniqueIdentifier>{69D0BA5C-EFD2-4A08-8829-DABFDD34CCDE}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="public.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="*.h;*.hpp;*.hxx;*.hm;*.inl;*.xsd">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="public.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\kbdmodal_code.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\kbdmodal_driver.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\kbdmodal_expandz.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\kbdmodal_keycodes.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\kbdmodal_map.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\kbdmodal_proc.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\kbdmodal_state.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\my_bitutils.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\public.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Inf Include="KbdModal.inx">
+      <Filter>Driver Files</Filter>
+    </Inf>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Source\kbdmodal_code.c">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\kbdmodal_driver.c">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\kbdmodal_expandz.c">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\kbdmodal_map.c">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\kbdmodal_proc.c">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\kbdmodal_state.c">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\rawpdo.c">
+      <Filter>Source</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

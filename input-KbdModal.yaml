@@ -1,0 +1,10 @@
+### YamlMime:Sample
+sample:
+- name: Keyboard Modal Filter Driver (KbdModal)
+  description: A WDF  keyboard modal filter driver.
+  generateZip: true
+  author: chrishoen
+  languages:
+  - cpp
+  technologies:
+  - windows
