@@ -1,0 +1,94 @@
+;;*******************************************************************
+[Version]
+Signature="$Windows NT$"
+Class=Keyboard
+ClassGuid={4D36E96B-E325-11CE-BFC1-08002BE10318}
+DriverPackageType=ClassFilter
+Provider=%PROV%
+DriverPackageDisplayName=%DESC%
+DriverVer=09/11/2016,18.27.23.257
+CatalogFile=KmdfSamples.cat
+
+;;*******************************************************************
+[DefaultInstall.NT]
+CopyFiles = kbdmodal_CopyFiles
+AddReg    = kbdmodal_AddReg
+
+[kbdmodal_CopyFiles]
+kbdmodal.sys
+
+[kbdmodal_AddReg]
+HKLM, System\CurrentControlSet\Control\Class\{4D36E96B-E325-11CE-BFC1-08002BE10318}, UpperFilters, 0x00010000, kbdmodal,kbdclass
+
+;;*******************************************************************
+[DefaultInstall.NT.Services]
+AddService = kbdmodal,  , kbdmodal_Service_Inst
+
+[kbdmodal_Service_Inst]
+DisplayName    = %DESC%
+ServiceType    = 1                  ; SERVICE_KERNEL_DRIVER
+StartType      = 3                  ; SERVICE_DEMAND_START
+ErrorControl   = 1                  ; SERVICE_ERROR_IGNORE
+ServiceBinary  = %12%\kbdmodal.sys
+
+;;*******************************************************************
+
+[DestinationDirs]
+DefaultDestDir   = 12
+
+[SourceDisksNames]
+1 = %DiskId1%,,,
+
+[SourceDisksFiles]
+kbdmodal.sys = 1,,
+
+;;*******************************************************************
+;
+;--- kbdmodal Coinstaller installation ------
+;
+
+[DestinationDirs]
+kbdmodal_CoInstaller_CopyFiles = 11
+
+[kbdmodal.NT.CoInstallers]
+AddReg=kbdmodal_CoInstaller_AddReg
+CopyFiles=kbdmodal_CoInstaller_CopyFiles
+
+[kbdmodal_CoInstaller_AddReg]
+HKR,,CoInstallers32,0x00010000, "WdfCoInstaller01011.dll,WdfCoInstaller"
+
+[kbdmodal_CoInstaller_CopyFiles]
+WdfCoInstaller01011.dll
+
+[SourceDisksFiles]
+WdfCoInstaller01011.dll=1 ; make sure the number matches with SourceDisksNames
+
+[kbdmodal.NT.Wdf]
+KmdfService = kbdmodal, kbdmodal_wdfsect
+[kbdmodal_wdfsect]
+KmdfLibraryVersion = 1.11
+
+
+
+;;*******************************************************************
+[Strings]
+PROV = "CHoen"
+DESC = "Keyboard Modal Filter"
+
+;
+; Non-Localizable Strings
+;
+
+REG_SZ         = 0x00000000
+REG_MULTI_SZ   = 0x00010000
+REG_EXPAND_SZ  = 0x00020000
+REG_BINARY     = 0x00000001
+REG_DWORD      = 0x00010001
+SERVICEROOT    = "System\CurrentControlSet\Services"
+
+;
+; Localizable Strings
+;
+
+DiskId1 = "Modal Keyboard Filter #1 (Keyboard)"
+
