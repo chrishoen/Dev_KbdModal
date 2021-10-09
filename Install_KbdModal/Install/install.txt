@@ -1,0 +1,13 @@
+from the bios, disable secure boot
+
+from admin: bcdedit /set testsinging on
+restart
+
+run as admin: aaa_install.bat
+Returning with code 0x1
+
+run as admin: aaa_jump_key2 should show kbdmodal
+run as admin: aaa_jump_key1 should show kbdmodal kbdclass
+restart
+
+
