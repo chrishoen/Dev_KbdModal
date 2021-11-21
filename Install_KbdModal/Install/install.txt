@@ -10,4 +10,9 @@ run as admin: aaa_jump_key2 should show kbdmodal
 run as admin: aaa_jump_key1 should show kbdmodal kbdclass
 restart
 
+if driver is loaded and disabled: to enable:
+run as admin: aaa_jump_key1 set kbdmodal kbdclass
+
+if driver is loaded and enabled: to disable:
+run as admin: aaa_jump_key1 set kbdclass
 
